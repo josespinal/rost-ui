@@ -1,0 +1,972 @@
+/* ============================================
+   Root Variables
+   ============================================ */
+:root {
+  --rost-transition-fast: 150ms ease;
+  --rost-transition-medium: 220ms ease;
+  --rost-focus-ring: 0 0 0 3px color-mix(in srgb, var(--ring) 45%, transparent);
+}
+
+/* ============================================
+   Button Component
+   ============================================ */
+.rost-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--primary-foreground);
+  background: var(--primary);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--rost-transition-fast),
+    box-shadow var(--rost-transition-medium),
+    background-color var(--rost-transition-fast),
+    border-color var(--rost-transition-fast),
+    color var(--rost-transition-fast);
+}
+
+.rost-button[data-disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.rost-button:focus-visible {
+  outline: none;
+  box-shadow: var(--rost-focus-ring);
+}
+
+@media (hover: hover) {
+  .rost-button:hover:not([data-disabled]) {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(43, 33, 24, 0.18);
+  }
+}
+
+.rost-button--secondary {
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+  border-color: color-mix(in srgb, var(--secondary-foreground) 10%, transparent);
+}
+
+.rost-button--ghost {
+  background: transparent;
+  color: var(--fg);
+  border-color: color-mix(in srgb, var(--fg) 20%, transparent);
+  box-shadow: none;
+}
+
+.rost-button--outline {
+  background: transparent;
+  color: var(--fg);
+  border-color: var(--border);
+  box-shadow: none;
+}
+
+.rost-button--sm {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+.rost-button--lg {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+}
+
+/* ============================================
+   Input & Textarea Components
+   ============================================ */
+.rost-input,
+.rost-textarea {
+  width: 100%;
+  border-radius: calc(var(--radius) - 4px);
+  border: 1px solid var(--border);
+  background-color: var(--card);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  padding: 0.65rem 0.85rem;
+  transition: border-color var(--rost-transition-fast),
+    box-shadow var(--rost-transition-fast);
+}
+
+.rost-input::placeholder,
+.rost-textarea::placeholder {
+  color: var(--muted-foreground);
+}
+
+.rost-input:focus-visible,
+.rost-textarea:focus-visible {
+  outline: none;
+  border-color: var(--ring);
+  box-shadow: var(--rost-focus-ring);
+}
+
+.rost-input:disabled,
+.rost-textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.rost-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ============================================
+   Card Component
+   ============================================ */
+.rost-card {
+  background: var(--card);
+  color: var(--card-foreground);
+  border-radius: calc(var(--radius) + 2px);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+.rost-card__header,
+.rost-card__content,
+.rost-card__footer {
+  padding: 1.25rem;
+}
+
+.rost-card__header {
+  border-bottom: 1px solid var(--border);
+}
+
+.rost-card__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.rost-card__description {
+  margin: 0.35rem 0 0;
+  color: var(--muted-foreground);
+  font-size: 0.9rem;
+}
+
+.rost-card__footer {
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+/* ============================================
+   Avatar Component
+   ============================================ */
+.rost-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+  font-weight: 600;
+}
+
+.rost-avatar__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rost-avatar__fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   Badge Component
+   ============================================ */
+.rost-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+.rost-badge--outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--fg);
+}
+
+.rost-badge--accent {
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+  color: var(--accent-foreground);
+}
+
+/* ============================================
+   Form Components
+   ============================================ */
+.rost-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rost-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.rost-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.rost-description {
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
+}
+
+.rost-error {
+  font-size: 0.8rem;
+  color: var(--danger);
+}
+
+/* ============================================
+   Modal Component
+   ============================================ */
+.rost-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: color-mix(in srgb, var(--fg) 35%, transparent);
+  opacity: 0.4;
+  transition: opacity var(--rost-transition-fast);
+}
+
+.rost-modal-overlay[data-starting-style],
+.rost-modal-overlay[data-ending-style] {
+  opacity: 0;
+}
+
+.rost-modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: min(32rem, calc(100vw - 2.5rem));
+  transform: translate(-50%, -50%);
+  border-radius: calc(var(--radius) + 4px);
+  background: var(--card);
+  color: var(--card-foreground);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  padding: 1.75rem;
+  outline: none;
+  transition: transform var(--rost-transition-medium),
+    opacity var(--rost-transition-fast);
+}
+
+.rost-modal-content[data-starting-style],
+.rost-modal-content[data-ending-style] {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+.rost-modal-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+}
+
+.rost-modal-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.rost-modal-description {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.rost-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+/* ============================================
+   Checkbox Component
+   ============================================ */
+.rost-checkbox {
+  width: 1.1rem;
+  height: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.35rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--primary-foreground);
+  transition: border-color var(--rost-transition-fast),
+    background-color var(--rost-transition-fast),
+    box-shadow var(--rost-transition-fast);
+}
+
+.rost-checkbox[data-checked] {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.rost-checkbox:focus-visible {
+  outline: none;
+  box-shadow: var(--rost-focus-ring);
+}
+
+.rost-checkbox__indicator {
+  display: inline-flex;
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+/* ============================================
+   Radio Components
+   ============================================ */
+.rost-radio {
+  width: 1.1rem;
+  height: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--primary);
+  transition: border-color var(--rost-transition-fast),
+    background-color var(--rost-transition-fast),
+    box-shadow var(--rost-transition-fast);
+}
+
+.rost-radio[data-checked] {
+  border-color: var(--primary);
+}
+
+.rost-radio:focus-visible {
+  outline: none;
+  box-shadow: var(--rost-focus-ring);
+}
+
+.rost-radio__indicator {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.rost-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.rost-radio-group__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--fg);
+}
+
+/* ============================================
+   Select Component
+   ============================================ */
+.rost-select-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-width: 180px;
+  padding: 0.6rem 0.85rem;
+  border-radius: calc(var(--radius) - 4px);
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  transition: border-color var(--rost-transition-fast),
+    box-shadow var(--rost-transition-fast);
+}
+
+.rost-select-trigger:focus-visible {
+  outline: none;
+  border-color: var(--ring);
+  box-shadow: var(--rost-focus-ring);
+}
+
+.rost-select-icon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--muted-foreground);
+}
+
+.rost-select-content {
+  background: var(--card);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 4px);
+  box-shadow: var(--shadow-soft);
+  padding: 0.35rem;
+}
+
+.rost-select-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.rost-select-item[data-highlighted] {
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.rost-select-item[data-selected] {
+  font-weight: 600;
+}
+
+.rost-select-item-indicator {
+  width: 0.85rem;
+  height: 0.85rem;
+  color: var(--accent-foreground);
+}
+
+.rost-select-label {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted-foreground);
+}
+
+.rost-select-separator {
+  height: 1px;
+  margin: 0.35rem 0;
+  background: var(--border);
+}
+
+/* ============================================
+   Toast Components
+   ============================================ */
+.rost-toast-viewport {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: min(360px, calc(100vw - 2rem));
+  z-index: 50;
+}
+
+.rost-toast {
+  --toast-gap: 0.75rem;
+  --toast-peek: 0.75rem;
+  --toast-scale: calc(max(0, 1 - (var(--toast-index) * 0.1)));
+  --toast-shrink: calc(1 - var(--toast-scale));
+  --toast-height: var(--toast-frontmost-height, var(--toast-height));
+  --toast-offset-y: calc(
+    var(--toast-offset-y) * -1 + (var(--toast-index) * var(--toast-gap) * -1) +
+      var(--toast-swipe-movement-y)
+  );
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: var(--card);
+  color: var(--card-foreground);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 2px);
+  box-shadow: var(--shadow-soft);
+  padding: 0.9rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem;
+  align-items: start;
+  transform-origin: bottom center;
+  transform: translateX(var(--toast-swipe-movement-x))
+    translateY(
+      calc(
+        var(--toast-swipe-movement-y) - (var(--toast-index) * var(--toast-peek)) -
+          (var(--toast-shrink) * var(--toast-height))
+      )
+    )
+    scale(var(--toast-scale));
+  transition: transform 0.35s ease, opacity 0.35s ease, height 0.15s ease;
+  z-index: calc(1000 - var(--toast-index));
+  height: var(--toast-height);
+}
+
+.rost-toast[data-expanded] {
+  transform: translateX(var(--toast-swipe-movement-x))
+    translateY(var(--toast-offset-y));
+  height: var(--toast-height);
+}
+
+.rost-toast[data-starting-style],
+.rost-toast[data-ending-style] {
+  opacity: 0;
+  transform: translateY(150%);
+}
+
+.rost-toast[data-limited] {
+  opacity: 0;
+}
+
+.rost-toast::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: calc(var(--toast-gap) + 1px);
+}
+
+.rost-toast__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: opacity var(--rost-transition-fast);
+}
+
+.rost-toast__content[data-behind] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rost-toast__content[data-expanded] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.rost-toast__title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.rost-toast__description {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+}
+
+.rost-toast__action,
+.rost-toast__close {
+  border: none;
+  background: transparent;
+  color: var(--fg);
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  transition: background-color var(--rost-transition-fast);
+}
+
+.rost-toast__action:hover,
+.rost-toast__close:hover {
+  background: color-mix(in srgb, var(--fg) 10%, transparent);
+}
+
+.rost-toast__close svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* ============================================
+   Sidebar Component
+   ============================================ */
+.rost-sidebar {
+  width: 260px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  color: var(--card-foreground);
+  border-right: 1px solid var(--border);
+}
+
+.rost-sidebar__header,
+.rost-sidebar__content,
+.rost-sidebar__footer {
+  padding: 1.25rem;
+}
+
+.rost-sidebar__header {
+  border-bottom: 1px solid var(--border);
+}
+
+.rost-sidebar__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.rost-sidebar__section-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted-foreground);
+  margin: 0 0 0.35rem;
+}
+
+.rost-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 0.75rem;
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color var(--rost-transition-fast),
+    color var(--rost-transition-fast);
+}
+
+.rost-sidebar__item:hover {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.rost-sidebar__item--active {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  color: var(--accent-foreground);
+}
+
+.rost-sidebar__footer {
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+
+/* ============================================
+   Nav Component
+   ============================================ */
+.rost-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rost-nav__item {
+  font-size: 0.9rem;
+  color: var(--fg);
+  text-decoration: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.6rem;
+  transition: background-color var(--rost-transition-fast),
+    color var(--rost-transition-fast);
+}
+
+.rost-nav__item:hover {
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.rost-nav__item--active {
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+  color: var(--accent-foreground);
+}
+
+/* ============================================
+   Icon Component
+   ============================================ */
+.rost-icon {
+  width: 1rem;
+  height: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   Table Components
+   ============================================ */
+.rost-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  color: var(--fg);
+}
+
+.rost-table__header {
+  text-align: left;
+}
+
+.rost-table__head {
+  padding: 0.75rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted-foreground);
+  border-bottom: 1px solid var(--border);
+}
+
+.rost-table__sort {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+}
+
+.rost-table__sort-indicator {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+.rost-table__sort--active {
+  color: var(--fg);
+}
+
+.rost-table__row {
+  border-bottom: 1px solid var(--border);
+}
+
+.rost-table__row:last-child {
+  border-bottom: none;
+}
+
+.rost-table__cell {
+  padding: 0.75rem;
+  color: var(--fg);
+}
+
+.rost-table__caption {
+  text-align: left;
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+  padding: 0.5rem 0;
+}
+
+/* ============================================
+   Data Table Component
+   ============================================ */
+.rost-data-table {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 4px);
+  overflow: hidden;
+  background: var(--card);
+}
+
+.rost-data-table__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+}
+
+.rost-data-table__toolbar-title h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.rost-data-table__toolbar-title p {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+}
+
+.rost-data-table__toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.rost-data-table__filters {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.rost-data-table__filters-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.rost-data-table__filters-clear {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--fg);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background-color var(--rost-transition-fast),
+    border-color var(--rost-transition-fast);
+}
+
+.rost-data-table__filters-clear:hover {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.rost-data-table__empty {
+  text-align: center;
+  padding: 1.5rem 0.75rem;
+  color: var(--muted-foreground);
+}
+
+.rost-data-table__footer {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--border);
+  background: color-mix(in srgb, var(--card) 90%, transparent);
+}
+
+.rost-data-table__pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+}
+
+.rost-data-table__pagination-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rost-data-table__pagination-button {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--fg);
+  border-radius: 0.6rem;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color var(--rost-transition-fast),
+    border-color var(--rost-transition-fast);
+}
+
+.rost-data-table__pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.rost-data-table__pagination-button:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.rost-data-table__pagination-page {
+  font-size: 0.8rem;
+  color: var(--fg);
+}
+
+/* ============================================
+   Combobox Component
+   ============================================ */
+.rost-combobox-input {
+  width: 100%;
+  border-radius: calc(var(--radius) - 4px);
+  border: 1px solid var(--border);
+  background-color: var(--card);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  padding: 0.6rem 0.85rem;
+  transition: border-color var(--rost-transition-fast),
+    box-shadow var(--rost-transition-fast);
+}
+
+.rost-combobox-input:focus-visible {
+  outline: none;
+  border-color: var(--ring);
+  box-shadow: var(--rost-focus-ring);
+}
+
+.rost-combobox-trigger {
+  background: transparent;
+  border: none;
+  color: var(--muted-foreground);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+}
+
+.rost-combobox-positioner {
+  z-index: 40;
+}
+
+.rost-combobox-popup {
+  background: var(--card);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 4px);
+  box-shadow: var(--shadow-soft);
+  padding: 0.35rem;
+}
+
+.rost-combobox-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.rost-combobox-item[data-highlighted] {
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.rost-combobox-item[data-selected] {
+  font-weight: 600;
+}
+
+.rost-combobox-item-indicator {
+  width: 0.85rem;
+  height: 0.85rem;
+  color: var(--accent-foreground);
+}

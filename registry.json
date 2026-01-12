@@ -1,0 +1,368 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "rost-ui",
+  "homepage": "https://github.com/rost/rost-ui",
+  "items": [
+    {
+      "name": "rost-ui-utils",
+      "type": "registry:lib",
+      "title": "Rost UI Utils",
+      "description": "Shared utilities for rost-ui components with clsx and tailwind-merge support.",
+      "dependencies": ["clsx", "tailwind-merge"],
+      "files": [
+        {
+          "path": "components/ui/utils.ts",
+          "type": "registry:lib",
+          "target": "components/ui/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "rost-ui-styles",
+      "type": "registry:style",
+      "title": "Rost UI Styles",
+      "description": "Shared CSS styles for rost-ui components.",
+      "files": [
+        {
+          "path": "styles/rost-ui.css",
+          "type": "registry:style",
+          "target": "styles/rost-ui.css"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:component",
+      "title": "Button",
+      "description": "Warm, cozy button component with variants (primary, secondary, ghost, outline) and sizes (sm, md, lg) based on Base UI.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:component",
+      "title": "Input",
+      "description": "Text input component with focus states and styling based on Base UI.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/input.tsx",
+          "type": "registry:component",
+          "target": "components/ui/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:component",
+      "title": "Textarea",
+      "description": "Multi-line text input component with vertical resize and rost-ui styling.",
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/textarea.tsx",
+          "type": "registry:component",
+          "target": "components/ui/textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:component",
+      "title": "Card",
+      "description": "Card layout primitives with header, content, footer, title, and description components.",
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:component",
+      "title": "Avatar",
+      "description": "Avatar component with image fallback support based on Base UI.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/avatar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/avatar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:component",
+      "title": "Badge",
+      "description": "Badge component for status labels with outline and accent variants.",
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/badge.tsx",
+          "type": "registry:component",
+          "target": "components/ui/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:component",
+      "title": "Form",
+      "description": "Form helpers with field, label, control, description, and error message components using Base UI Field and Form.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/form.tsx",
+          "type": "registry:component",
+          "target": "components/ui/form.tsx"
+        }
+      ]
+    },
+    {
+      "name": "modal",
+      "type": "registry:component",
+      "title": "Modal",
+      "description": "Modal dialog with overlay, header, title, description, and footer components built on Base UI Dialog.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/modal.tsx",
+          "type": "registry:component",
+          "target": "components/ui/modal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:component",
+      "title": "Checkbox",
+      "description": "Checkbox component with indicator and checked states built on Base UI.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/checkbox.tsx",
+          "type": "registry:component",
+          "target": "components/ui/checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio",
+      "type": "registry:component",
+      "title": "Radio",
+      "description": "Radio button component with indicator and checked states built on Base UI.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/radio.tsx",
+          "type": "registry:component",
+          "target": "components/ui/radio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:component",
+      "title": "Radio Group",
+      "description": "Radio group wrapper for managing multiple radio buttons built on Base UI.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/radio-group.tsx",
+          "type": "registry:component",
+          "target": "components/ui/radio-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:component",
+      "title": "Select",
+      "description": "Select dropdown component with trigger, popup, items, labels, and separators built on Base UI.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/select.tsx",
+          "type": "registry:component",
+          "target": "components/ui/select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:component",
+      "title": "Combobox",
+      "description": "Combobox component with input, popup, and item selection built on Base UI.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/combobox.tsx",
+          "type": "registry:component",
+          "target": "components/ui/combobox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:component",
+      "title": "Toast",
+      "description": "Toast notification primitives with viewport, content, title, description, action, and close components built on Base UI.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/toast.tsx",
+          "type": "registry:component",
+          "target": "components/ui/toast.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toaster",
+      "type": "registry:component",
+      "title": "Toaster",
+      "description": "Toast helper component with shared manager and renderer for displaying toast notifications.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["rost-ui-styles", "toast"],
+      "files": [
+        {
+          "path": "components/ui/toaster.tsx",
+          "type": "registry:component",
+          "target": "components/ui/toaster.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:component",
+      "title": "Table",
+      "description": "Table primitives with header, body, rows, cells, and sorting support for data layouts.",
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/table.tsx",
+          "type": "registry:component",
+          "target": "components/ui/table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "data-table-toolbar",
+      "type": "registry:component",
+      "title": "Data Table Toolbar",
+      "description": "Toolbar component for data tables with title, description, and action area.",
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/data-table-toolbar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/data-table-toolbar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "data-table-filters",
+      "type": "registry:component",
+      "title": "Data Table Filters",
+      "description": "Filters component for data tables with filter list and clear button.",
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/data-table-filters.tsx",
+          "type": "registry:component",
+          "target": "components/ui/data-table-filters.tsx"
+        }
+      ]
+    },
+    {
+      "name": "data-table-pagination",
+      "type": "registry:component",
+      "title": "Data Table Pagination",
+      "description": "Pagination component for data tables with page navigation and info display.",
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/data-table-pagination.tsx",
+          "type": "registry:component",
+          "target": "components/ui/data-table-pagination.tsx"
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:component",
+      "title": "Data Table",
+      "description": "Complete data table component with sorting and pagination. Composes table primitives with pagination functionality.",
+      "registryDependencies": ["rost-ui-styles", "table", "data-table-pagination"],
+      "files": [
+        {
+          "path": "components/ui/data-table.tsx",
+          "type": "registry:component",
+          "target": "components/ui/data-table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:component",
+      "title": "Sidebar",
+      "description": "Sidebar layout primitives with header, content sections, items, and footer for navigation.",
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/sidebar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "nav",
+      "type": "registry:component",
+      "title": "Nav",
+      "description": "Navigation primitives with items and active states for top navigation bars.",
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/nav.tsx",
+          "type": "registry:component",
+          "target": "components/ui/nav.tsx"
+        }
+      ]
+    },
+    {
+      "name": "icon",
+      "type": "registry:component",
+      "title": "Icon",
+      "description": "Icon wrapper component for Lucide icons or custom SVGs with consistent sizing.",
+      "registryDependencies": ["rost-ui-utils", "rost-ui-styles"],
+      "files": [
+        {
+          "path": "components/ui/icon.tsx",
+          "type": "registry:component",
+          "target": "components/ui/icon.tsx"
+        }
+      ]
+    }
+  ]
+}

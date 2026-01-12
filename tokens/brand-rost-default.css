@@ -1,0 +1,16 @@
+:root {
+  --primary: #c2410c;
+  --primary-foreground: #fff7ed;
+  --accent: #f97316;
+  --accent-foreground: #1c140f;
+  --radius: 1rem;
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Fraunces", "Georgia", serif;
+}
+
+.dark {
+  --primary: #fb923c;
+  --primary-foreground: #1c140f;
+  --accent: #fdba74;
+  --accent-foreground: #1c140f;
+}
