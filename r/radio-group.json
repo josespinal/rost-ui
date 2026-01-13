@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group",
+  "title": "Radio Group",
+  "description": "Radio group wrapper for managing multiple radio buttons built on Base UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/radio-group.tsx",
+      "content": "import * as React from \"react\";\nimport { RadioGroup as BaseRadioGroup } from \"@base-ui/react/radio-group\";\n\nimport { cn } from \"./utils\";\n\nexport type RadioGroupProps = React.ComponentPropsWithoutRef<typeof BaseRadioGroup>;\n\nexport const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>(\n  ({ className, ...props }, ref) => {\n    return (\n      <BaseRadioGroup\n        ref={ref}\n        className={cn(\"rost-radio-group\", className)}\n        {...props}\n      />\n    );\n  }\n);\n\nRadioGroup.displayName = \"RadioGroup\";\n\nexport type RadioGroupItemProps = React.LabelHTMLAttributes<HTMLLabelElement>;\n\nexport const RadioGroupItem = React.forwardRef<\n  HTMLLabelElement,\n  RadioGroupItemProps\n>(({ className, ...props }, ref) => {\n  return (\n    <label ref={ref} className={cn(\"rost-radio-group__item\", className)} {...props} />\n  );\n});\n\nRadioGroupItem.displayName = \"RadioGroupItem\";\n",
+      "type": "registry:component",
+      "target": "components/ui/radio-group.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

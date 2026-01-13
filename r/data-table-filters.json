@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "data-table-filters",
+  "title": "Data Table Filters",
+  "description": "Filters component for data tables with filter list and clear button.",
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/data-table-filters.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"./utils\";\n\nexport type DataTableFiltersProps = React.HTMLAttributes<HTMLDivElement> & {\n  onClear?: () => void;\n  clearLabel?: string;\n};\n\n/**\n * Filters component for data tables with filter list and clear button.\n *\n * @example\n * ```tsx\n * <DataTableFilters onClear={() => clearFilters()}>\n *   <Select placeholder=\"Filter by status\" />\n * </DataTableFilters>\n * ```\n */\nexport function DataTableFilters({\n  className,\n  onClear,\n  clearLabel = \"Clear\",\n  children,\n  ...props\n}: DataTableFiltersProps) {\n  return (\n    <div className={cn(\"rost-data-table__filters\", className)} {...props}>\n      <div className=\"rost-data-table__filters-list\">{children}</div>\n      {onClear ? (\n        <button\n          type=\"button\"\n          className=\"rost-data-table__filters-clear\"\n          onClick={onClear}\n        >\n          {clearLabel}\n        </button>\n      ) : null}\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/data-table-filters.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

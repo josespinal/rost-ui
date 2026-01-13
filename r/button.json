@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "title": "Button",
+  "description": "Warm, cozy button component with variants (primary, secondary, ghost, outline) and sizes (sm, md, lg) based on Base UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/button.tsx",
+      "content": "import * as React from \"react\";\nimport { Button as BaseButton } from \"@base-ui/react/button\";\n\nimport { cn } from \"./utils\";\n\ntype ButtonVariant = \"primary\" | \"secondary\" | \"ghost\" | \"outline\";\ntype ButtonSize = \"sm\" | \"md\" | \"lg\";\n\n/**\n * Button component props extending Base UI Button.\n */\nexport type ButtonProps = React.ComponentPropsWithoutRef<typeof BaseButton> & {\n  /** Visual style variant of the button */\n  variant?: ButtonVariant;\n  /** Size of the button */\n  size?: ButtonSize;\n};\n\nconst variantClasses: Record<ButtonVariant, string> = {\n  primary: \"rost-button\",\n  secondary: \"rost-button rost-button--secondary\",\n  ghost: \"rost-button rost-button--ghost\",\n  outline: \"rost-button rost-button--outline\",\n};\n\nconst sizeClasses: Record<ButtonSize, string> = {\n  sm: \"rost-button--sm\",\n  md: \"\",\n  lg: \"rost-button--lg\",\n};\n\n/**\n * Button component with variants and sizes built on Base UI.\n *\n * @example\n * ```tsx\n * <Button variant=\"primary\" size=\"md\">Click me</Button>\n * <Button variant=\"secondary\" size=\"sm\">Small</Button>\n * <Button variant=\"ghost\">Ghost</Button>\n * ```\n */\nexport const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(\n  ({ className, variant = \"primary\", size = \"md\", ...props }, ref) => {\n    return (\n      <BaseButton\n        ref={ref}\n        className={cn(variantClasses[variant], sizeClasses[size], className)}\n        {...props}\n      />\n    );\n  }\n);\n\nButton.displayName = \"Button\";\n",
+      "type": "registry:component",
+      "target": "components/ui/button.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

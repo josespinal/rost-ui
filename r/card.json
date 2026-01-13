@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card",
+  "title": "Card",
+  "description": "Card layout primitives with header, content, footer, title, and description components.",
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/card.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"./utils\";\n\nexport type CardProps = React.HTMLAttributes<HTMLDivElement>;\n\n/**\n * Card container component.\n *\n * @example\n * ```tsx\n * <Card>\n *   <CardHeader>\n *     <CardTitle>Title</CardTitle>\n *   </CardHeader>\n *   <CardContent>Content</CardContent>\n * </Card>\n * ```\n */\nexport const Card = React.forwardRef<HTMLDivElement, CardProps>(\n  ({ className, ...props }, ref) => {\n    return <div ref={ref} className={cn(\"rost-card\", className)} {...props} />;\n  }\n);\n\nCard.displayName = \"Card\";\n\n/**\n * Card header section with optional title and description.\n */\nexport const CardHeader = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => {\n  return (\n    <div ref={ref} className={cn(\"rost-card__header\", className)} {...props} />\n  );\n});\n\nCardHeader.displayName = \"CardHeader\";\n\n/**\n * Card title heading.\n */\nexport const CardTitle = React.forwardRef<\n  HTMLHeadingElement,\n  React.HTMLAttributes<HTMLHeadingElement>\n>(({ className, ...props }, ref) => {\n  return (\n    <h3 ref={ref} className={cn(\"rost-card__title\", className)} {...props} />\n  );\n});\n\nCardTitle.displayName = \"CardTitle\";\n\n/**\n * Card description text.\n */\nexport const CardDescription = React.forwardRef<\n  HTMLParagraphElement,\n  React.HTMLAttributes<HTMLParagraphElement>\n>(({ className, ...props }, ref) => {\n  return (\n    <p\n      ref={ref}\n      className={cn(\"rost-card__description\", className)}\n      {...props}\n    />\n  );\n});\n\nCardDescription.displayName = \"CardDescription\";\n\n/**\n * Card main content area.\n */\nexport const CardContent = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => {\n  return (\n    <div ref={ref} className={cn(\"rost-card__content\", className)} {...props} />\n  );\n});\n\nCardContent.displayName = \"CardContent\";\n\n/**\n * Card footer section for actions.\n */\nexport const CardFooter = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => {\n  return (\n    <div ref={ref} className={cn(\"rost-card__footer\", className)} {...props} />\n  );\n});\n\nCardFooter.displayName = \"CardFooter\";\n",
+      "type": "registry:component",
+      "target": "components/ui/card.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

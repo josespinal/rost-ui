@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "modal",
+  "title": "Modal",
+  "description": "Modal dialog with overlay, header, title, description, and footer components built on Base UI Dialog.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/modal.tsx",
+      "content": "import * as React from \"react\";\nimport { Dialog } from \"@base-ui/react/dialog\";\n\nimport { cn } from \"./utils\";\n\n/**\n * Modal root component. Controls the open/closed state.\n */\nexport const Modal = Dialog.Root;\n\n/**\n * Modal trigger button that opens the modal.\n */\nexport const ModalTrigger = Dialog.Trigger;\n\n/**\n * Modal portal for rendering outside the DOM hierarchy.\n */\nexport const ModalPortal = Dialog.Portal;\n\n/**\n * Modal close button.\n */\nexport const ModalClose = Dialog.Close;\n\n/**\n * Modal backdrop overlay.\n */\nexport const ModalOverlay = React.forwardRef<\n  HTMLDivElement,\n  React.ComponentPropsWithoutRef<typeof Dialog.Backdrop>\n>(({ className, ...props }, ref) => {\n  return (\n    <Dialog.Backdrop\n      ref={ref}\n      className={cn(\"rost-modal-overlay\", className)}\n      {...props}\n    />\n  );\n});\n\nModalOverlay.displayName = \"ModalOverlay\";\n\n/**\n * Modal content container.\n *\n * @example\n * ```tsx\n * <Modal>\n *   <ModalTrigger>Open</ModalTrigger>\n *   <ModalPortal>\n *     <ModalOverlay />\n *     <ModalContent>\n *       <ModalHeader>\n *         <ModalTitle>Title</ModalTitle>\n *       </ModalHeader>\n *     </ModalContent>\n *   </ModalPortal>\n * </Modal>\n * ```\n */\nexport const ModalContent = React.forwardRef<\n  HTMLDivElement,\n  React.ComponentPropsWithoutRef<typeof Dialog.Popup>\n>(({ className, ...props }, ref) => {\n  return (\n    <Dialog.Popup\n      ref={ref}\n      className={cn(\"rost-modal-content\", className)}\n      {...props}\n    />\n  );\n});\n\nModalContent.displayName = \"ModalContent\";\n\n/**\n * Modal header section.\n */\nexport const ModalHeader = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => {\n  return (\n    <div ref={ref} className={cn(\"rost-modal-header\", className)} {...props} />\n  );\n});\n\nModalHeader.displayName = \"ModalHeader\";\n\n/**\n * Modal title heading.\n */\nexport const ModalTitle = React.forwardRef<\n  HTMLHeadingElement,\n  React.ComponentPropsWithoutRef<typeof Dialog.Title>\n>(({ className, ...props }, ref) => {\n  return (\n    <Dialog.Title\n      ref={ref}\n      className={cn(\"rost-modal-title\", className)}\n      {...props}\n    />\n  );\n});\n\nModalTitle.displayName = \"ModalTitle\";\n\n/**\n * Modal description text.\n */\nexport const ModalDescription = React.forwardRef<\n  HTMLParagraphElement,\n  React.ComponentPropsWithoutRef<typeof Dialog.Description>\n>(({ className, ...props }, ref) => {\n  return (\n    <Dialog.Description\n      ref={ref}\n      className={cn(\"rost-modal-description\", className)}\n      {...props}\n    />\n  );\n});\n\nModalDescription.displayName = \"ModalDescription\";\n\n/**\n * Modal footer section for actions.\n */\nexport const ModalFooter = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => {\n  return (\n    <div ref={ref} className={cn(\"rost-modal-footer\", className)} {...props} />\n  );\n});\n\nModalFooter.displayName = \"ModalFooter\";\n",
+      "type": "registry:component",
+      "target": "components/ui/modal.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

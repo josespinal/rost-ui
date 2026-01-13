@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table",
+  "title": "Table",
+  "description": "Table primitives with header, body, rows, cells, and sorting support for data layouts.",
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/table.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"./utils\";\n\nexport type TableProps = React.TableHTMLAttributes<HTMLTableElement>;\n\nexport const Table = React.forwardRef<HTMLTableElement, TableProps>(\n  ({ className, ...props }, ref) => {\n    return <table ref={ref} className={cn(\"rost-table\", className)} {...props} />;\n  }\n);\n\nTable.displayName = \"Table\";\n\nexport const TableHeader = React.forwardRef<\n  HTMLTableSectionElement,\n  React.HTMLAttributes<HTMLTableSectionElement>\n>(({ className, ...props }, ref) => {\n  return <thead ref={ref} className={cn(\"rost-table__header\", className)} {...props} />;\n});\n\nTableHeader.displayName = \"TableHeader\";\n\nexport const TableBody = React.forwardRef<\n  HTMLTableSectionElement,\n  React.HTMLAttributes<HTMLTableSectionElement>\n>(({ className, ...props }, ref) => {\n  return <tbody ref={ref} className={cn(\"rost-table__body\", className)} {...props} />;\n});\n\nTableBody.displayName = \"TableBody\";\n\nexport const TableRow = React.forwardRef<\n  HTMLTableRowElement,\n  React.HTMLAttributes<HTMLTableRowElement>\n>(({ className, ...props }, ref) => {\n  return <tr ref={ref} className={cn(\"rost-table__row\", className)} {...props} />;\n});\n\nTableRow.displayName = \"TableRow\";\n\nexport const TableHead = React.forwardRef<\n  HTMLTableCellElement,\n  React.ThHTMLAttributes<HTMLTableCellElement>\n>(({ className, ...props }, ref) => {\n  return <th ref={ref} className={cn(\"rost-table__head\", className)} {...props} />;\n});\n\nTableHead.displayName = \"TableHead\";\n\nexport const TableCell = React.forwardRef<\n  HTMLTableCellElement,\n  React.TdHTMLAttributes<HTMLTableCellElement>\n>(({ className, ...props }, ref) => {\n  return <td ref={ref} className={cn(\"rost-table__cell\", className)} {...props} />;\n});\n\nTableCell.displayName = \"TableCell\";\n\nexport const TableCaption = React.forwardRef<\n  HTMLTableCaptionElement,\n  React.HTMLAttributes<HTMLTableCaptionElement>\n>(({ className, ...props }, ref) => {\n  return <caption ref={ref} className={cn(\"rost-table__caption\", className)} {...props} />;\n});\n\nTableCaption.displayName = \"TableCaption\";\n",
+      "type": "registry:component",
+      "target": "components/ui/table.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

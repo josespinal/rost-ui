@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select",
+  "title": "Select",
+  "description": "Select dropdown component with trigger, popup, items, labels, and separators built on Base UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/select.tsx",
+      "content": "import * as React from \"react\";\nimport { Select } from \"@base-ui/react/select\";\n\nimport { cn } from \"./utils\";\n\nexport const SelectRoot = Select.Root;\nexport const SelectGroup = Select.Group;\nexport const SelectValue = Select.Value;\nexport const SelectPositioner = Select.Positioner;\nexport const SelectPortal = Select.Portal;\n\nexport const SelectTrigger = React.forwardRef<\n  HTMLButtonElement,\n  React.ComponentPropsWithoutRef<typeof Select.Trigger>\n>(({ className, ...props }, ref) => {\n  return (\n    <Select.Trigger\n      ref={ref}\n      className={cn(\"rost-select-trigger\", className)}\n      {...props}\n    />\n  );\n});\n\nSelectTrigger.displayName = \"SelectTrigger\";\n\nexport const SelectIcon = React.forwardRef<\n  HTMLSpanElement,\n  React.ComponentPropsWithoutRef<typeof Select.Icon>\n>(({ className, children, ...props }, ref) => {\n  return (\n    <Select.Icon\n      ref={ref}\n      className={cn(\"rost-select-icon\", className)}\n      {...props}\n    >\n      {children ?? (\n        <svg viewBox=\"0 0 16 16\" aria-hidden=\"true\">\n          <path\n            fill=\"currentColor\"\n            d=\"m4.2 6.1 3.8 3.8 3.8-3.8 1.1 1.1-4.9 4.9-4.9-4.9 1.1-1.1Z\"\n          />\n        </svg>\n      )}\n    </Select.Icon>\n  );\n});\n\nSelectIcon.displayName = \"SelectIcon\";\n\nexport const SelectContent = React.forwardRef<\n  HTMLDivElement,\n  React.ComponentPropsWithoutRef<typeof Select.Popup>\n>(({ className, ...props }, ref) => {\n  return (\n    <Select.Popup\n      ref={ref}\n      className={cn(\"rost-select-content\", className)}\n      {...props}\n    />\n  );\n});\n\nSelectContent.displayName = \"SelectContent\";\n\nexport const SelectItem = React.forwardRef<\n  HTMLDivElement,\n  React.ComponentPropsWithoutRef<typeof Select.Item>\n>(({ className, ...props }, ref) => {\n  return (\n    <Select.Item\n      ref={ref}\n      className={cn(\"rost-select-item\", className)}\n      {...props}\n    />\n  );\n});\n\nSelectItem.displayName = \"SelectItem\";\n\nexport const SelectItemText = React.forwardRef<\n  HTMLSpanElement,\n  React.ComponentPropsWithoutRef<typeof Select.ItemText>\n>(({ className, ...props }, ref) => {\n  return (\n    <Select.ItemText\n      ref={ref}\n      className={cn(\"rost-select-item-text\", className)}\n      {...props}\n    />\n  );\n});\n\nSelectItemText.displayName = \"SelectItemText\";\n\nexport const SelectItemIndicator = React.forwardRef<\n  HTMLSpanElement,\n  React.ComponentPropsWithoutRef<typeof Select.ItemIndicator>\n>(({ className, children, ...props }, ref) => {\n  return (\n    <Select.ItemIndicator\n      ref={ref}\n      className={cn(\"rost-select-item-indicator\", className)}\n      {...props}\n    >\n      {children ?? (\n        <svg viewBox=\"0 0 16 16\" aria-hidden=\"true\">\n          <path\n            fill=\"currentColor\"\n            d=\"M6.3 11.2 3.4 8.4l1.1-1.1 1.8 1.8 5-5 1.1 1.1-6.1 6.2Z\"\n          />\n        </svg>\n      )}\n    </Select.ItemIndicator>\n  );\n});\n\nSelectItemIndicator.displayName = \"SelectItemIndicator\";\n\nexport const SelectLabel = React.forwardRef<\n  HTMLDivElement,\n  React.ComponentPropsWithoutRef<typeof Select.Label>\n>(({ className, ...props }, ref) => {\n  return (\n    <Select.Label\n      ref={ref}\n      className={cn(\"rost-select-label\", className)}\n      {...props}\n    />\n  );\n});\n\nSelectLabel.displayName = \"SelectLabel\";\n\nexport const SelectSeparator = React.forwardRef<\n  HTMLDivElement,\n  React.ComponentPropsWithoutRef<typeof Select.Separator>\n>(({ className, ...props }, ref) => {\n  return (\n    <Select.Separator\n      ref={ref}\n      className={cn(\"rost-select-separator\", className)}\n      {...props}\n    />\n  );\n});\n\nSelectSeparator.displayName = \"SelectSeparator\";\n",
+      "type": "registry:component",
+      "target": "components/ui/select.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

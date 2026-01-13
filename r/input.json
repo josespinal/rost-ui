@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input",
+  "title": "Input",
+  "description": "Text input component with focus states and styling based on Base UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/input.tsx",
+      "content": "import * as React from \"react\";\nimport { Input as BaseInput } from \"@base-ui/react/input\";\n\nimport { cn } from \"./utils\";\n\nexport type InputProps = React.ComponentPropsWithoutRef<typeof BaseInput>;\n\n/**\n * Text input component built on Base UI.\n *\n * @example\n * ```tsx\n * <Input type=\"text\" placeholder=\"Enter text\" />\n * <Input type=\"email\" disabled />\n * ```\n */\nexport const Input = React.forwardRef<HTMLInputElement, InputProps>(\n  ({ className, ...props }, ref) => {\n    return (\n      <BaseInput ref={ref} className={cn(\"rost-input\", className)} {...props} />\n    );\n  }\n);\n\nInput.displayName = \"Input\";\n",
+      "type": "registry:component",
+      "target": "components/ui/input.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

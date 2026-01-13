@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toaster",
+  "title": "Toaster",
+  "description": "Toast helper component with shared manager and renderer for displaying toast notifications.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@rost/rost-ui-styles",
+    "@rost/toast"
+  ],
+  "files": [
+    {
+      "path": "components/ui/toaster.tsx",
+      "content": "import * as React from \"react\";\nimport { Toast } from \"@base-ui/react/toast\";\nimport type {\n  ToastManagerAddOptions,\n  ToastManagerPromiseOptions,\n} from \"@base-ui/react/toast\";\n\nimport {\n  ToastClose,\n  ToastContent,\n  ToastDescription,\n  ToastProvider,\n  ToastRoot,\n  ToastTitle,\n  ToastViewport,\n} from \"./toast\";\n\nconst toastManager = Toast.createToastManager();\n\nexport function toast<Data extends object = Record<string, unknown>>(\n  options: ToastManagerAddOptions<Data>\n) {\n  return toastManager.add(options);\n}\n\nexport function toastPromise<Value, Data extends object = Record<string, unknown>>(\n  promise: Promise<Value>,\n  options: ToastManagerPromiseOptions<Value, Data>\n) {\n  return toastManager.promise(promise, options);\n}\n\nexport function Toaster() {\n  return (\n    <ToastProvider toastManager={toastManager}>\n      <Toast.Portal>\n        <ToastViewport>\n          <ToastList />\n        </ToastViewport>\n      </Toast.Portal>\n    </ToastProvider>\n  );\n}\n\nfunction ToastList() {\n  const { toasts } = Toast.useToastManager();\n\n  return toasts.map((toast) => (\n    <ToastRoot key={toast.id} toast={toast}>\n      <ToastContent>\n        {toast.title ? <ToastTitle>{toast.title}</ToastTitle> : null}\n        {toast.description ? <ToastDescription>{toast.description}</ToastDescription> : null}\n        <ToastClose aria-label=\"Close\" />\n      </ToastContent>\n    </ToastRoot>\n  ));\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/toaster.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

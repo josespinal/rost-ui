@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "icon",
+  "title": "Icon",
+  "description": "Icon wrapper component for Lucide icons or custom SVGs with consistent sizing.",
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/icon.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"./utils\";\n\nexport type IconProps = React.SVGProps<SVGSVGElement> & {\n  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;\n};\n\nexport function Icon({ icon: IconComponent, className, ...props }: IconProps) {\n  return <IconComponent className={cn(\"rost-icon\", className)} {...props} />;\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/icon.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

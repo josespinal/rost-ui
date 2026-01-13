@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar",
+  "title": "Avatar",
+  "description": "Avatar component with image fallback support based on Base UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/avatar.tsx",
+      "content": "import * as React from \"react\";\nimport { Avatar as BaseAvatar } from \"@base-ui/react/avatar\";\n\nimport { cn } from \"./utils\";\n\nexport type AvatarProps = React.ComponentPropsWithoutRef<typeof BaseAvatar.Root>;\n\nexport const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(\n  ({ className, ...props }, ref) => {\n    return (\n      <BaseAvatar.Root\n        ref={ref}\n        className={cn(\"rost-avatar\", className)}\n        {...props}\n      />\n    );\n  }\n);\n\nAvatar.displayName = \"Avatar\";\n\nexport const AvatarImage = React.forwardRef<\n  HTMLImageElement,\n  React.ComponentPropsWithoutRef<typeof BaseAvatar.Image>\n>(({ className, ...props }, ref) => {\n  return (\n    <BaseAvatar.Image\n      ref={ref}\n      className={cn(\"rost-avatar__image\", className)}\n      {...props}\n    />\n  );\n});\n\nAvatarImage.displayName = \"AvatarImage\";\n\nexport const AvatarFallback = React.forwardRef<\n  HTMLSpanElement,\n  React.ComponentPropsWithoutRef<typeof BaseAvatar.Fallback>\n>(({ className, ...props }, ref) => {\n  return (\n    <BaseAvatar.Fallback\n      ref={ref}\n      className={cn(\"rost-avatar__fallback\", className)}\n      {...props}\n    />\n  );\n});\n\nAvatarFallback.displayName = \"AvatarFallback\";\n",
+      "type": "registry:component",
+      "target": "components/ui/avatar.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea",
+  "title": "Textarea",
+  "description": "Multi-line text input component with vertical resize and rost-ui styling.",
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/textarea.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"./utils\";\n\nexport type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement>;\n\nexport const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(\n  ({ className, ...props }, ref) => {\n    return (\n      <textarea ref={ref} className={cn(\"rost-textarea\", className)} {...props} />\n    );\n  }\n);\n\nTextarea.displayName = \"Textarea\";\n",
+      "type": "registry:component",
+      "target": "components/ui/textarea.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

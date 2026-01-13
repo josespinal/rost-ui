@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio",
+  "title": "Radio",
+  "description": "Radio button component with indicator and checked states built on Base UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/radio.tsx",
+      "content": "import * as React from \"react\";\nimport { Radio } from \"@base-ui/react/radio\";\n\nimport { cn } from \"./utils\";\n\nexport type RadioProps = React.ComponentPropsWithoutRef<typeof Radio.Root>;\n\nexport const RadioItem = React.forwardRef<HTMLSpanElement, RadioProps>(\n  ({ className, ...props }, ref) => {\n    return (\n      <Radio.Root\n        ref={ref}\n        className={cn(\"rost-radio\", className)}\n        {...props}\n      />\n    );\n  }\n);\n\nRadioItem.displayName = \"RadioItem\";\n\nexport type RadioIndicatorProps = React.ComponentPropsWithoutRef<typeof Radio.Indicator>;\n\nexport const RadioIndicator = React.forwardRef<\n  HTMLSpanElement,\n  RadioIndicatorProps\n>(({ className, ...props }, ref) => {\n  return (\n    <Radio.Indicator\n      ref={ref}\n      className={cn(\"rost-radio__indicator\", className)}\n      {...props}\n    />\n  );\n});\n\nRadioIndicator.displayName = \"RadioIndicator\";\n",
+      "type": "registry:component",
+      "target": "components/ui/radio.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

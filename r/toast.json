@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toast",
+  "title": "Toast",
+  "description": "Toast notification primitives with viewport, content, title, description, action, and close components built on Base UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/toast.tsx",
+      "content": "import * as React from \"react\";\nimport { Toast } from \"@base-ui/react/toast\";\n\nimport { cn } from \"./utils\";\n\nexport const ToastProvider = Toast.Provider;\n\nexport const ToastViewport = React.forwardRef<\n  HTMLDivElement,\n  React.ComponentPropsWithoutRef<typeof Toast.Viewport>\n>(({ className, ...props }, ref) => {\n  return (\n    <Toast.Viewport\n      ref={ref}\n      className={cn(\"rost-toast-viewport\", className)}\n      {...props}\n    />\n  );\n});\n\nToastViewport.displayName = \"ToastViewport\";\n\nexport const ToastRoot = React.forwardRef<\n  HTMLDivElement,\n  React.ComponentPropsWithoutRef<typeof Toast.Root>\n>(({ className, ...props }, ref) => {\n  return (\n    <Toast.Root ref={ref} className={cn(\"rost-toast\", className)} {...props} />\n  );\n});\n\nToastRoot.displayName = \"ToastRoot\";\n\nexport const ToastContent = React.forwardRef<\n  HTMLDivElement,\n  React.ComponentPropsWithoutRef<typeof Toast.Content>\n>(({ className, ...props }, ref) => {\n  return (\n    <Toast.Content\n      ref={ref}\n      className={cn(\"rost-toast__content\", className)}\n      {...props}\n    />\n  );\n});\n\nToastContent.displayName = \"ToastContent\";\n\nexport const ToastTitle = React.forwardRef<\n  HTMLDivElement,\n  React.ComponentPropsWithoutRef<typeof Toast.Title>\n>(({ className, ...props }, ref) => {\n  return (\n    <Toast.Title ref={ref} className={cn(\"rost-toast__title\", className)} {...props} />\n  );\n});\n\nToastTitle.displayName = \"ToastTitle\";\n\nexport const ToastDescription = React.forwardRef<\n  HTMLDivElement,\n  React.ComponentPropsWithoutRef<typeof Toast.Description>\n>(({ className, ...props }, ref) => {\n  return (\n    <Toast.Description\n      ref={ref}\n      className={cn(\"rost-toast__description\", className)}\n      {...props}\n    />\n  );\n});\n\nToastDescription.displayName = \"ToastDescription\";\n\nexport const ToastAction = React.forwardRef<\n  HTMLButtonElement,\n  React.ComponentPropsWithoutRef<typeof Toast.Action>\n>(({ className, ...props }, ref) => {\n  return (\n    <Toast.Action\n      ref={ref}\n      className={cn(\"rost-toast__action\", className)}\n      {...props}\n    />\n  );\n});\n\nToastAction.displayName = \"ToastAction\";\n\nexport const ToastClose = React.forwardRef<\n  HTMLButtonElement,\n  React.ComponentPropsWithoutRef<typeof Toast.Close>\n>(({ className, children, ...props }, ref) => {\n  return (\n    <Toast.Close\n      ref={ref}\n      className={cn(\"rost-toast__close\", className)}\n      {...props}\n    >\n      {children ?? (\n        <svg viewBox=\"0 0 16 16\" aria-hidden=\"true\">\n          <path\n            fill=\"currentColor\"\n            d=\"m12.6 4.6-1.1-1.1L8 6.9 4.6 3.5 3.5 4.6 6.9 8l-3.4 3.4 1.1 1.1L8 9.1l3.4 3.4 1.1-1.1L9.1 8l3.5-3.4Z\"\n          />\n        </svg>\n      )}\n    </Toast.Close>\n  );\n});\n\nToastClose.displayName = \"ToastClose\";\n",
+      "type": "registry:component",
+      "target": "components/ui/toast.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

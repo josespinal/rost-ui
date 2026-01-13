@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "title": "Badge",
+  "description": "Badge component for status labels with outline and accent variants.",
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/badge.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"./utils\";\n\ntype BadgeVariant = \"default\" | \"outline\" | \"accent\";\n\nexport type BadgeProps = React.HTMLAttributes<HTMLSpanElement> & {\n  variant?: BadgeVariant;\n};\n\nconst variantClasses: Record<BadgeVariant, string> = {\n  default: \"rost-badge\",\n  outline: \"rost-badge rost-badge--outline\",\n  accent: \"rost-badge rost-badge--accent\",\n};\n\nexport const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(\n  ({ className, variant = \"default\", ...props }, ref) => {\n    return (\n      <span ref={ref} className={cn(variantClasses[variant], className)} {...props} />\n    );\n  }\n);\n\nBadge.displayName = \"Badge\";\n",
+      "type": "registry:component",
+      "target": "components/ui/badge.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "data-table-pagination",
+  "title": "Data Table Pagination",
+  "description": "Pagination component for data tables with page navigation and info display.",
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/data-table-pagination.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"./utils\";\n\nexport type DataTablePaginationProps = React.HTMLAttributes<HTMLDivElement> & {\n  pageIndex: number;\n  pageSize: number;\n  totalCount: number;\n  onPageChange: (pageIndex: number) => void;\n};\n\n/**\n * Pagination component for data tables with page navigation and info display.\n *\n * @example\n * ```tsx\n * <DataTablePagination\n *   pageIndex={0}\n *   pageSize={10}\n *   totalCount={100}\n *   onPageChange={(page) => setPage(page)}\n * />\n * ```\n */\nexport function DataTablePagination({\n  className,\n  pageIndex,\n  pageSize,\n  totalCount,\n  onPageChange,\n  ...props\n}: DataTablePaginationProps) {\n  const totalPages = Math.max(1, Math.ceil(totalCount / pageSize));\n  const start = totalCount === 0 ? 0 : pageIndex * pageSize + 1;\n  const end = Math.min(totalCount, (pageIndex + 1) * pageSize);\n\n  return (\n    <div className={cn(\"rost-data-table__pagination\", className)} {...props}>\n      <span className=\"rost-data-table__pagination-info\">\n        Showing {start}-{end} of {totalCount}\n      </span>\n      <div className=\"rost-data-table__pagination-controls\">\n        <button\n          type=\"button\"\n          className=\"rost-data-table__pagination-button\"\n          onClick={() => onPageChange(Math.max(0, pageIndex - 1))}\n          disabled={pageIndex === 0}\n        >\n          Previous\n        </button>\n        <span className=\"rost-data-table__pagination-page\">\n          Page {pageIndex + 1} of {totalPages}\n        </span>\n        <button\n          type=\"button\"\n          className=\"rost-data-table__pagination-button\"\n          onClick={() => onPageChange(Math.min(totalPages - 1, pageIndex + 1))}\n          disabled={pageIndex >= totalPages - 1}\n        >\n          Next\n        </button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/data-table-pagination.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar",
+  "title": "Sidebar",
+  "description": "Sidebar layout primitives with header, content sections, items, and footer for navigation.",
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/sidebar.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"./utils\";\n\nexport type SidebarProps = React.HTMLAttributes<HTMLDivElement>;\n\nexport const Sidebar = React.forwardRef<HTMLDivElement, SidebarProps>(\n  ({ className, ...props }, ref) => {\n    return <aside ref={ref} className={cn(\"rost-sidebar\", className)} {...props} />;\n  }\n);\n\nSidebar.displayName = \"Sidebar\";\n\nexport const SidebarHeader = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => {\n  return (\n    <div ref={ref} className={cn(\"rost-sidebar__header\", className)} {...props} />\n  );\n});\n\nSidebarHeader.displayName = \"SidebarHeader\";\n\nexport const SidebarContent = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => {\n  return (\n    <div ref={ref} className={cn(\"rost-sidebar__content\", className)} {...props} />\n  );\n});\n\nSidebarContent.displayName = \"SidebarContent\";\n\nexport const SidebarSection = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => {\n  return (\n    <div ref={ref} className={cn(\"rost-sidebar__section\", className)} {...props} />\n  );\n});\n\nSidebarSection.displayName = \"SidebarSection\";\n\nexport const SidebarSectionTitle = React.forwardRef<\n  HTMLParagraphElement,\n  React.HTMLAttributes<HTMLParagraphElement>\n>(({ className, ...props }, ref) => {\n  return (\n    <p\n      ref={ref}\n      className={cn(\"rost-sidebar__section-title\", className)}\n      {...props}\n    />\n  );\n});\n\nSidebarSectionTitle.displayName = \"SidebarSectionTitle\";\n\nexport type SidebarItemProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {\n  active?: boolean;\n};\n\nexport const SidebarItem = React.forwardRef<HTMLAnchorElement, SidebarItemProps>(\n  ({ className, active, ...props }, ref) => {\n    return (\n      <a\n        ref={ref}\n        data-active={active || undefined}\n        className={cn(\n          \"rost-sidebar__item\",\n          active && \"rost-sidebar__item--active\",\n          className\n        )}\n        {...props}\n      />\n    );\n  }\n);\n\nSidebarItem.displayName = \"SidebarItem\";\n\nexport const SidebarFooter = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => {\n  return (\n    <div ref={ref} className={cn(\"rost-sidebar__footer\", className)} {...props} />\n  );\n});\n\nSidebarFooter.displayName = \"SidebarFooter\";\n",
+      "type": "registry:component",
+      "target": "components/ui/sidebar.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

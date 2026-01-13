@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "data-table-toolbar",
+  "title": "Data Table Toolbar",
+  "description": "Toolbar component for data tables with title, description, and action area.",
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/data-table-toolbar.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"./utils\";\n\nexport type DataTableToolbarProps = React.HTMLAttributes<HTMLDivElement> & {\n  title?: React.ReactNode;\n  description?: React.ReactNode;\n};\n\n/**\n * Toolbar component for data tables with title, description, and action area.\n *\n * @example\n * ```tsx\n * <DataTableToolbar title=\"Users\" description=\"Manage your users\">\n *   <Button>Add User</Button>\n * </DataTableToolbar>\n * ```\n */\nexport function DataTableToolbar({\n  className,\n  title,\n  description,\n  children,\n  ...props\n}: DataTableToolbarProps) {\n  return (\n    <div className={cn(\"rost-data-table__toolbar\", className)} {...props}>\n      <div className=\"rost-data-table__toolbar-title\">\n        {title ? <h3>{title}</h3> : null}\n        {description ? <p>{description}</p> : null}\n      </div>\n      <div className=\"rost-data-table__toolbar-actions\">{children}</div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/data-table-toolbar.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox",
+  "title": "Combobox",
+  "description": "Combobox component with input, popup, and item selection built on Base UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/combobox.tsx",
+      "content": "import * as React from \"react\";\nimport { Combobox } from \"@base-ui/react/combobox\";\n\nimport { cn } from \"./utils\";\n\nexport const ComboboxRoot = Combobox.Root;\nexport const ComboboxPortal = Combobox.Portal;\n\nexport const ComboboxInput = React.forwardRef<\n  HTMLInputElement,\n  React.ComponentPropsWithoutRef<typeof Combobox.Input>\n>(({ className, ...props }, ref) => {\n  return (\n    <Combobox.Input\n      ref={ref}\n      className={cn(\"rost-combobox-input\", className)}\n      {...props}\n    />\n  );\n});\n\nComboboxInput.displayName = \"ComboboxInput\";\n\nexport const ComboboxTrigger = React.forwardRef<\n  HTMLButtonElement,\n  React.ComponentPropsWithoutRef<typeof Combobox.Trigger>\n>(({ className, ...props }, ref) => {\n  return (\n    <Combobox.Trigger\n      ref={ref}\n      className={cn(\"rost-combobox-trigger\", className)}\n      {...props}\n    />\n  );\n});\n\nComboboxTrigger.displayName = \"ComboboxTrigger\";\n\nexport const ComboboxPositioner = React.forwardRef<\n  HTMLDivElement,\n  React.ComponentPropsWithoutRef<typeof Combobox.Positioner>\n>(({ className, ...props }, ref) => {\n  return (\n    <Combobox.Positioner\n      ref={ref}\n      className={cn(\"rost-combobox-positioner\", className)}\n      {...props}\n    />\n  );\n});\n\nComboboxPositioner.displayName = \"ComboboxPositioner\";\n\nexport const ComboboxPopup = React.forwardRef<\n  HTMLDivElement,\n  React.ComponentPropsWithoutRef<typeof Combobox.Popup>\n>(({ className, ...props }, ref) => {\n  return (\n    <Combobox.Popup\n      ref={ref}\n      className={cn(\"rost-combobox-popup\", className)}\n      {...props}\n    />\n  );\n});\n\nComboboxPopup.displayName = \"ComboboxPopup\";\n\nexport const ComboboxItem = React.forwardRef<\n  HTMLDivElement,\n  React.ComponentPropsWithoutRef<typeof Combobox.Item>\n>(({ className, ...props }, ref) => {\n  return (\n    <Combobox.Item\n      ref={ref}\n      className={cn(\"rost-combobox-item\", className)}\n      {...props}\n    />\n  );\n});\n\nComboboxItem.displayName = \"ComboboxItem\";\n\nexport const ComboboxItemText = React.forwardRef<\n  HTMLSpanElement,\n  React.ComponentPropsWithoutRef<typeof Combobox.ItemText>\n>(({ className, ...props }, ref) => {\n  return (\n    <Combobox.ItemText\n      ref={ref}\n      className={cn(\"rost-combobox-item-text\", className)}\n      {...props}\n    />\n  );\n});\n\nComboboxItemText.displayName = \"ComboboxItemText\";\n\nexport const ComboboxItemIndicator = React.forwardRef<\n  HTMLSpanElement,\n  React.ComponentPropsWithoutRef<typeof Combobox.ItemIndicator>\n>(({ className, children, ...props }, ref) => {\n  return (\n    <Combobox.ItemIndicator\n      ref={ref}\n      className={cn(\"rost-combobox-item-indicator\", className)}\n      {...props}\n    >\n      {children ?? (\n        <svg viewBox=\"0 0 16 16\" aria-hidden=\"true\">\n          <path\n            fill=\"currentColor\"\n            d=\"M6.3 11.2 3.4 8.4l1.1-1.1 1.8 1.8 5-5 1.1 1.1-6.1 6.2Z\"\n          />\n        </svg>\n      )}\n    </Combobox.ItemIndicator>\n  );\n});\n\nComboboxItemIndicator.displayName = \"ComboboxItemIndicator\";\n",
+      "type": "registry:component",
+      "target": "components/ui/combobox.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

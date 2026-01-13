@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "nav",
+  "title": "Nav",
+  "description": "Navigation primitives with items and active states for top navigation bars.",
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/nav.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"./utils\";\n\nexport type NavProps = React.HTMLAttributes<HTMLElement>;\n\nexport const Nav = React.forwardRef<HTMLElement, NavProps>(\n  ({ className, ...props }, ref) => {\n    return <nav ref={ref} className={cn(\"rost-nav\", className)} {...props} />;\n  }\n);\n\nNav.displayName = \"Nav\";\n\nexport type NavItemProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {\n  active?: boolean;\n};\n\nexport const NavItem = React.forwardRef<HTMLAnchorElement, NavItemProps>(\n  ({ className, active, ...props }, ref) => {\n    return (\n      <a\n        ref={ref}\n        data-active={active || undefined}\n        className={cn(\"rost-nav__item\", active && \"rost-nav__item--active\", className)}\n        {...props}\n      />\n    );\n  }\n);\n\nNavItem.displayName = \"NavItem\";\n",
+      "type": "registry:component",
+      "target": "components/ui/nav.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

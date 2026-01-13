@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form",
+  "title": "Form",
+  "description": "Form helpers with field, label, control, description, and error message components using Base UI Field and Form.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@rost/rost-ui-utils",
+    "@rost/rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/form.tsx",
+      "content": "import * as React from \"react\";\nimport { Field } from \"@base-ui/react/field\";\nimport { Form as BaseForm } from \"@base-ui/react/form\";\n\nimport { cn } from \"./utils\";\n\nexport type FormProps = React.ComponentPropsWithoutRef<typeof BaseForm>;\n\n/**\n * Form container component built on Base UI Form.\n *\n * @example\n * ```tsx\n * <Form>\n *   <FormField>\n *     <FormLabel>Name</FormLabel>\n *     <FormControl type=\"text\" />\n *     <FormDescription>Enter your name</FormDescription>\n *   </FormField>\n * </Form>\n * ```\n */\nexport const Form = React.forwardRef<HTMLFormElement, FormProps>(\n  ({ className, ...props }, ref) => {\n    return (\n      <BaseForm ref={ref} className={cn(\"rost-form\", className)} {...props} />\n    );\n  }\n);\n\nForm.displayName = \"Form\";\n\nexport type FormFieldProps = React.ComponentPropsWithoutRef<typeof Field.Root>;\n\n/**\n * Form field wrapper for grouping label, control, and messages.\n */\nexport const FormField = React.forwardRef<HTMLDivElement, FormFieldProps>(\n  ({ className, ...props }, ref) => {\n    return (\n      <Field.Root ref={ref} className={cn(\"rost-field\", className)} {...props} />\n    );\n  }\n);\n\nFormField.displayName = \"FormField\";\n\n/**\n * Form field label.\n */\nexport const FormLabel = React.forwardRef<\n  HTMLLabelElement,\n  React.ComponentPropsWithoutRef<typeof Field.Label>\n>(({ className, ...props }, ref) => {\n  return (\n    <Field.Label ref={ref} className={cn(\"rost-label\", className)} {...props} />\n  );\n});\n\nFormLabel.displayName = \"FormLabel\";\n\n/**\n * Form field control (input, textarea, etc.).\n */\nexport const FormControl = React.forwardRef<\n  HTMLInputElement,\n  React.ComponentPropsWithoutRef<typeof Field.Control>\n>(({ className, ...props }, ref) => {\n  return (\n    <Field.Control\n      ref={ref}\n      className={cn(\"rost-input\", className)}\n      {...props}\n    />\n  );\n});\n\nFormControl.displayName = \"FormControl\";\n\n/**\n * Form field description/help text.\n */\nexport const FormDescription = React.forwardRef<\n  HTMLParagraphElement,\n  React.ComponentPropsWithoutRef<typeof Field.Description>\n>(({ className, ...props }, ref) => {\n  return (\n    <Field.Description\n      ref={ref}\n      className={cn(\"rost-description\", className)}\n      {...props}\n    />\n  );\n});\n\nFormDescription.displayName = \"FormDescription\";\n\n/**\n * Form field error message.\n */\nexport const FormMessage = React.forwardRef<\n  HTMLParagraphElement,\n  React.ComponentPropsWithoutRef<typeof Field.Error>\n>(({ className, ...props }, ref) => {\n  return (\n    <Field.Error ref={ref} className={cn(\"rost-error\", className)} {...props} />\n  );\n});\n\nFormMessage.displayName = \"FormMessage\";\n",
+      "type": "registry:component",
+      "target": "components/ui/form.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
