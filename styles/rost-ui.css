@@ -24,30 +24,16 @@
   line-height: 1.2;
   color: var(--primary-foreground);
   background: var(--primary);
-  box-shadow: var(--shadow-soft);
-  transition: transform var(--rost-transition-fast),
-    box-shadow var(--rost-transition-medium),
-    background-color var(--rost-transition-fast),
-    border-color var(--rost-transition-fast),
-    color var(--rost-transition-fast);
 }
 
 .rost-button[data-disabled] {
   opacity: 0.6;
   cursor: not-allowed;
-  box-shadow: none;
 }
 
 .rost-button:focus-visible {
   outline: none;
   box-shadow: var(--rost-focus-ring);
-}
-
-@media (hover: hover) {
-  .rost-button:hover:not([data-disabled]) {
-    transform: translateY(-1px);
-    box-shadow: 0 10px 20px rgba(43, 33, 24, 0.18);
-  }
 }
 
 .rost-button--secondary {
