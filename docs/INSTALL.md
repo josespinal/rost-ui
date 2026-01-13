@@ -33,13 +33,15 @@ Add the registry to your `components.json`. The file will already have other con
 }
 ```
 
-If the registry is private, use the GitHub API with an auth header:
+If the registry is private, you have two options:
+
+**Option 1: GitHub API with auth header (recommended):**
 
 ```json
 {
   "registries": {
     "@rost": {
-      "url": "https://api.github.com/repos/rost/rost-ui/contents/r/{name}.json",
+      "url": "https://api.github.com/repos/josespinal/rost-ui/contents/r/{name}.json",
       "headers": {
         "Authorization": "Bearer ${GITHUB_TOKEN}",
         "Accept": "application/vnd.github.v3.raw"
@@ -48,6 +50,39 @@ If the registry is private, use the GitHub API with an auth header:
   }
 }
 ```
+
+**Option 2: Raw URL with token in URL (less secure, but sometimes more reliable):**
+
+```json
+{
+  "registries": {
+    "@rost": "https://${GITHUB_TOKEN}@raw.githubusercontent.com/josespinal/rost-ui/main/r/{name}.json"
+  }
+}
+```
+
+**Note:** If you get parsing errors with Option 1, try Option 2. The GitHub API raw endpoint sometimes has issues with JSON parsing in shadcn.
+
+**Important for private repositories:**
+
+1. **Set the GitHub token environment variable:**
+   ```bash
+   export GITHUB_TOKEN=your_github_personal_access_token
+   ```
+   Make sure the token has `repo` scope for private repositories.
+
+2. **Verify the token works:**
+   ```bash
+   curl -H "Authorization: Bearer $GITHUB_TOKEN" \
+        -H "Accept: application/vnd.github.v3.raw" \
+        https://api.github.com/repos/rost/rost-ui/contents/r/button.json
+   ```
+
+3. **If you still get errors**, shadcn might be falling back to the default registry when it can't access your custom registry. Make sure:
+   - The `GITHUB_TOKEN` environment variable is set in the same terminal session where you run `npx shadcn@latest add`
+   - The token has the correct permissions (`repo` scope for private repos)
+   - The repository path in the URL matches your actual repository (`rost/rost-ui`)
+   - The `r/` directory with all JSON files is committed to your repository
 
 Registry maintainers should generate the `r/*.json` files using:
 
