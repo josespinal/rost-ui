@@ -1,0 +1,20 @@
+{
+  "name": "checkbox",
+  "type": "registry:component",
+  "title": "Checkbox",
+  "description": "Checkbox component with indicator and checked states built on Base UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "rost-ui-utils",
+    "rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/checkbox.tsx",
+      "type": "registry:component",
+      "target": "components/ui/checkbox.tsx"
+    }
+  ]
+}

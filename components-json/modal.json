@@ -1,0 +1,20 @@
+{
+  "name": "modal",
+  "type": "registry:component",
+  "title": "Modal",
+  "description": "Modal dialog with overlay, header, title, description, and footer components built on Base UI Dialog.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "rost-ui-utils",
+    "rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/modal.tsx",
+      "type": "registry:component",
+      "target": "components/ui/modal.tsx"
+    }
+  ]
+}

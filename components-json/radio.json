@@ -1,0 +1,20 @@
+{
+  "name": "radio",
+  "type": "registry:component",
+  "title": "Radio",
+  "description": "Radio button component with indicator and checked states built on Base UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "rost-ui-utils",
+    "rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/radio.tsx",
+      "type": "registry:component",
+      "target": "components/ui/radio.tsx"
+    }
+  ]
+}

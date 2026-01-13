@@ -1,0 +1,13 @@
+{
+  "name": "rost-ui-styles",
+  "type": "registry:style",
+  "title": "Rost UI Styles",
+  "description": "Shared CSS styles for rost-ui components.",
+  "files": [
+    {
+      "path": "styles/rost-ui.css",
+      "type": "registry:style",
+      "target": "styles/rost-ui.css"
+    }
+  ]
+}

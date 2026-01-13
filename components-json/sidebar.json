@@ -1,0 +1,17 @@
+{
+  "name": "sidebar",
+  "type": "registry:component",
+  "title": "Sidebar",
+  "description": "Sidebar layout primitives with header, content sections, items, and footer for navigation.",
+  "registryDependencies": [
+    "rost-ui-utils",
+    "rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/sidebar.tsx",
+      "type": "registry:component",
+      "target": "components/ui/sidebar.tsx"
+    }
+  ]
+}

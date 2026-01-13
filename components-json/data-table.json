@@ -1,0 +1,18 @@
+{
+  "name": "data-table",
+  "type": "registry:component",
+  "title": "Data Table",
+  "description": "Complete data table component with sorting and pagination. Composes table primitives with pagination functionality.",
+  "registryDependencies": [
+    "rost-ui-styles",
+    "table",
+    "data-table-pagination"
+  ],
+  "files": [
+    {
+      "path": "components/ui/data-table.tsx",
+      "type": "registry:component",
+      "target": "components/ui/data-table.tsx"
+    }
+  ]
+}

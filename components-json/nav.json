@@ -1,0 +1,17 @@
+{
+  "name": "nav",
+  "type": "registry:component",
+  "title": "Nav",
+  "description": "Navigation primitives with items and active states for top navigation bars.",
+  "registryDependencies": [
+    "rost-ui-utils",
+    "rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/nav.tsx",
+      "type": "registry:component",
+      "target": "components/ui/nav.tsx"
+    }
+  ]
+}

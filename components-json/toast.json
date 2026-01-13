@@ -1,0 +1,20 @@
+{
+  "name": "toast",
+  "type": "registry:component",
+  "title": "Toast",
+  "description": "Toast notification primitives with viewport, content, title, description, action, and close components built on Base UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "rost-ui-utils",
+    "rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/toast.tsx",
+      "type": "registry:component",
+      "target": "components/ui/toast.tsx"
+    }
+  ]
+}

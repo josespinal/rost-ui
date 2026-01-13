@@ -1,0 +1,20 @@
+{
+  "name": "select",
+  "type": "registry:component",
+  "title": "Select",
+  "description": "Select dropdown component with trigger, popup, items, labels, and separators built on Base UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "rost-ui-utils",
+    "rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/select.tsx",
+      "type": "registry:component",
+      "target": "components/ui/select.tsx"
+    }
+  ]
+}

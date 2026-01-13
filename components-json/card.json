@@ -1,0 +1,17 @@
+{
+  "name": "card",
+  "type": "registry:component",
+  "title": "Card",
+  "description": "Card layout primitives with header, content, footer, title, and description components.",
+  "registryDependencies": [
+    "rost-ui-utils",
+    "rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/card.tsx",
+      "type": "registry:component",
+      "target": "components/ui/card.tsx"
+    }
+  ]
+}

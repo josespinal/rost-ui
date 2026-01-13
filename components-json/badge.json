@@ -1,0 +1,17 @@
+{
+  "name": "badge",
+  "type": "registry:component",
+  "title": "Badge",
+  "description": "Badge component for status labels with outline and accent variants.",
+  "registryDependencies": [
+    "rost-ui-utils",
+    "rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/badge.tsx",
+      "type": "registry:component",
+      "target": "components/ui/badge.tsx"
+    }
+  ]
+}

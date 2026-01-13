@@ -1,0 +1,20 @@
+{
+  "name": "form",
+  "type": "registry:component",
+  "title": "Form",
+  "description": "Form helpers with field, label, control, description, and error message components using Base UI Field and Form.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "rost-ui-utils",
+    "rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/form.tsx",
+      "type": "registry:component",
+      "target": "components/ui/form.tsx"
+    }
+  ]
+}

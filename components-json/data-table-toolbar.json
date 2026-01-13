@@ -1,0 +1,17 @@
+{
+  "name": "data-table-toolbar",
+  "type": "registry:component",
+  "title": "Data Table Toolbar",
+  "description": "Toolbar component for data tables with title, description, and action area.",
+  "registryDependencies": [
+    "rost-ui-utils",
+    "rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/data-table-toolbar.tsx",
+      "type": "registry:component",
+      "target": "components/ui/data-table-toolbar.tsx"
+    }
+  ]
+}

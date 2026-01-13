@@ -1,0 +1,17 @@
+{
+  "name": "textarea",
+  "type": "registry:component",
+  "title": "Textarea",
+  "description": "Multi-line text input component with vertical resize and rost-ui styling.",
+  "registryDependencies": [
+    "rost-ui-utils",
+    "rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/textarea.tsx",
+      "type": "registry:component",
+      "target": "components/ui/textarea.tsx"
+    }
+  ]
+}

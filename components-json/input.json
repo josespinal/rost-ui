@@ -1,0 +1,20 @@
+{
+  "name": "input",
+  "type": "registry:component",
+  "title": "Input",
+  "description": "Text input component with focus states and styling based on Base UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "rost-ui-utils",
+    "rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/input.tsx",
+      "type": "registry:component",
+      "target": "components/ui/input.tsx"
+    }
+  ]
+}

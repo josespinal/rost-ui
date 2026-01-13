@@ -1,0 +1,20 @@
+{
+  "name": "radio-group",
+  "type": "registry:component",
+  "title": "Radio Group",
+  "description": "Radio group wrapper for managing multiple radio buttons built on Base UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "rost-ui-utils",
+    "rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/radio-group.tsx",
+      "type": "registry:component",
+      "target": "components/ui/radio-group.tsx"
+    }
+  ]
+}

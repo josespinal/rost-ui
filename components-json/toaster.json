@@ -1,0 +1,20 @@
+{
+  "name": "toaster",
+  "type": "registry:component",
+  "title": "Toaster",
+  "description": "Toast helper component with shared manager and renderer for displaying toast notifications.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "rost-ui-styles",
+    "toast"
+  ],
+  "files": [
+    {
+      "path": "components/ui/toaster.tsx",
+      "type": "registry:component",
+      "target": "components/ui/toaster.tsx"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "combobox",
+  "type": "registry:component",
+  "title": "Combobox",
+  "description": "Combobox component with input, popup, and item selection built on Base UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "rost-ui-utils",
+    "rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/combobox.tsx",
+      "type": "registry:component",
+      "target": "components/ui/combobox.tsx"
+    }
+  ]
+}

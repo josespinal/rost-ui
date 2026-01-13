@@ -1,0 +1,17 @@
+{
+  "name": "rost-ui-utils",
+  "type": "registry:lib",
+  "title": "Rost UI Utils",
+  "description": "Shared utilities for rost-ui components with clsx and tailwind-merge support.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "components/ui/utils.ts",
+      "type": "registry:lib",
+      "target": "components/ui/utils.ts"
+    }
+  ]
+}

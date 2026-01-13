@@ -1,0 +1,17 @@
+{
+  "name": "table",
+  "type": "registry:component",
+  "title": "Table",
+  "description": "Table primitives with header, body, rows, cells, and sorting support for data layouts.",
+  "registryDependencies": [
+    "rost-ui-utils",
+    "rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/table.tsx",
+      "type": "registry:component",
+      "target": "components/ui/table.tsx"
+    }
+  ]
+}

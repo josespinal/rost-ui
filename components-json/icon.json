@@ -1,0 +1,17 @@
+{
+  "name": "icon",
+  "type": "registry:component",
+  "title": "Icon",
+  "description": "Icon wrapper component for Lucide icons or custom SVGs with consistent sizing.",
+  "registryDependencies": [
+    "rost-ui-utils",
+    "rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/icon.tsx",
+      "type": "registry:component",
+      "target": "components/ui/icon.tsx"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "button",
+  "type": "registry:component",
+  "title": "Button",
+  "description": "Warm, cozy button component with variants (primary, secondary, ghost, outline) and sizes (sm, md, lg) based on Base UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "rost-ui-utils",
+    "rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/button.tsx",
+      "type": "registry:component",
+      "target": "components/ui/button.tsx"
+    }
+  ]
+}

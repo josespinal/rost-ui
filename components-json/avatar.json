@@ -1,0 +1,20 @@
+{
+  "name": "avatar",
+  "type": "registry:component",
+  "title": "Avatar",
+  "description": "Avatar component with image fallback support based on Base UI.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "rost-ui-utils",
+    "rost-ui-styles"
+  ],
+  "files": [
+    {
+      "path": "components/ui/avatar.tsx",
+      "type": "registry:component",
+      "target": "components/ui/avatar.tsx"
+    }
+  ]
+}
