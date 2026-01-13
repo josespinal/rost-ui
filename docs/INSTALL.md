@@ -1,11 +1,11 @@
 # Install rost-ui registry
 
-## 1) Configure shadcn-ui
+## 1) Configure shadcn
 
 Run the official CLI in your React app:
 
 ```
-npx shadcn-ui@latest init
+npx shadcn@latest init
 ```
 
 Add the registry to your `components.json`:
@@ -19,7 +19,7 @@ Add the registry to your `components.json`:
 ## 2) Add components
 
 ```
-npx shadcn-ui@latest add button
+npx shadcn@latest add button
 ```
 
 ## 3) Add tokens + styles

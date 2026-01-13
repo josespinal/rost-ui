@@ -203,3 +203,4 @@ When working on this project, consider:
 - [Base UI React Documentation](https://base-ui.com/react/)
 - Project README.md for user-facing documentation
 - docs/BRANDING.md for theming information
+
